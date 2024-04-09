@@ -63,34 +63,36 @@ $partite = [
 
 
 $mese = [
-    "Gennaio",
-    "Febbraio",
-    "Marzo",
-    "Aprile",
-    "Maggio",
-    "Giugno",   
-    "Luglio",
-    "Agosto",
-    "Settembre",
-    "Ottobre",
-    "Novembre",
-    "Dicembre",
+    "gennaio",
+    "febbraio",
+    "marzo",
+    "aprile",
+    "maggio",
+    "giugno",   
+    "luglio",
+    "agosto",
+    "settembre",
+    "ottobre",
+    "novembre",
+    "dicembre",
 ];
 
-$giorno =[
+$giorno = [
     'Domenica',
     'Lunedì',
     'Martedì',
     'Mercoledì',
     'Giovedì',
     'Venerdì',
-    'Sabato'
+    'Sabato',
 ];
+
 
 
 $day_ita = $giorno[date('w')];
 $day_num = date("j");
-$month_ita = $mese[date('n')];
+$month_num = date('n');
+$month_ita = $mese[$month_num - 1];
 $year = date("Y");
 
 
@@ -107,7 +109,7 @@ $year = date("Y");
 </head>
 <body>
 
-<?php echo "$day_ita, $day_num $month_ita $year"?> 
+<?= "$day_ita, $day_num $month_ita $year"?> 
 
 
 <h2>Giornata 31</h2>
