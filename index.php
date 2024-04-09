@@ -62,34 +62,37 @@ $partite = [
 
 
 
-function dateCurrentIta(string $date): string
-{
-    $men = [
-        'Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio',
-        'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre',
-        'Novembre', 'Dicembre'
-    ];
+$mese = [
+    "Gennaio",
+    "Febbraio",
+    "Marzo",
+    "Aprile",
+    "Maggio",
+    "Giugno",   
+    "Luglio",
+    "Agosto",
+    "Settembre",
+    "Ottobre",
+    "Novembre",
+    "Dicembre",
+];
 
-    $mcz = [
-        'Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio',
-        'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre',
-        'Novembre', 'Dicembre'
-    ];
+$giorno =[
+    'Domenica',
+    'Lunedì',
+    'Martedì',
+    'Mercoledì',
+    'Giovedì',
+    'Venerdì',
+    'Sabato'
+];
 
-    $date = str_replace($men, $mcz, $date);
 
-    $den = [
-        'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì',
-        'Venerdì', 'Sabato', 'Domenica'
-    ];
+$day_ita = $giorno[date('w')];
+$day_num = date("j");
+$month_ita = $mese[date('n')];
+$year = date("Y");
 
-    $dcz = [
-        'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì',
-        'Venerdì', 'Sabato', 'Domenica'
-    ];
-
-    return str_replace($den, $dcz, $date);
-}
 
 ?>
 
@@ -104,8 +107,8 @@ function dateCurrentIta(string $date): string
 </head>
 <body>
 
-<!-- <h2><?php echo date('D, d M Y') ?></h2> -->
-<h2><?php echo dateCurrentIta('Martedì, 09 aprile 2024'); // Venerdì, 13 dicembre?></h2>
+<?php echo "$day_ita, $day_num $month_ita $year"?> 
+
 
 <h2>Giornata 31</h2>
 
